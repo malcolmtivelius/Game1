@@ -80,13 +80,13 @@ void Player::OnCollision(sf::Vector2f direction) {
         velocity.x = 0.0f;
     }
     
-    if (direction.y < 0.0f) {
+    if (direction.y < 0.0f && velocity.y > 0) {
         //Collision on the ground
         velocity.y = 0.0f;
         jumpCounter = 0;
         
     }else if (direction.y > 0.0f) {
-        //Collision on roof
+        //Collision on top
         velocity.y = 0.0f;
     }
 }
